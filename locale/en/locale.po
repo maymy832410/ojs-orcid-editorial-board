@@ -530,6 +530,9 @@ msgid "plugins.generic.orcidEditorialBoard.settings.step4"
 msgstr "Set the Redirect URI in ORCID to exactly:"
 
 msgid "plugins.generic.orcidEditorialBoard.settings.step5"
+msgstr "Copy the Editorial Board Page URL below and add it to Website Navigation Menus as a Remote URL item."
+
+msgid "plugins.generic.orcidEditorialBoard.settings.step6"
 msgstr "Paste the Client ID and Client Secret below and save."
 
 msgid "plugins.generic.orcidEditorialBoard.settings.credentialsTitle"
@@ -555,6 +558,12 @@ msgstr "Redirect URI"
 
 msgid "plugins.generic.orcidEditorialBoard.settings.redirectUriHelp"
 msgstr "Copy this URI exactly into your ORCID developer application's Redirect URIs."
+
+msgid "plugins.generic.orcidEditorialBoard.settings.editorialBoardUrl"
+msgstr "Editorial Board Page URL"
+
+msgid "plugins.generic.orcidEditorialBoard.settings.editorialBoardUrlHelp"
+msgstr "Use this URL for a Navigation Menu Remote URL item (Dashboard → Settings → Website → Navigation Menus)."
 
 msgid "plugins.generic.orcidEditorialBoard.settings.currentSecret"
 msgstr "Currently saved"

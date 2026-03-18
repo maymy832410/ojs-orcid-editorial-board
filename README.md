@@ -49,14 +49,38 @@ This is required so invitation and consent emails can be delivered correctly.
 
 ### B) Install from Plugin Gallery upload
 
-1. Download the release archive [orcidEditorialBoard-v1.6.5.1.tar.gz](https://github.com/user-attachments/files/26100737/orcidEditorialBoard-v1.6.5.1.tar.gz)
-
-  ).
+1. Download the release archive ([orcidEditorialBoard-v1.6.6.0.tar.gz](https://github.com/maymy832410/ojs-orcid-editorial-board/releases/download/v1.6.6.0/orcidEditorialBoard-v1.6.6.0.tar.gz)).
 2. In OJS go to: **Dashboard → Settings → Website → Plugins**.
 3. Click **Upload A New Plugin**.
 4. Upload the `.tar.gz` file.
 5. Install and enable **Editorial Board ORCID Verification**.
 6. Open plugin **Settings**.
+
+## Public Editorial Board page URL and navigation setup
+
+The plugin creates a public page route named `editorialBoard`.
+
+You can find the exact URL directly inside plugin settings:
+
+1. Go to **Website → Plugins → Generic Plugins**.
+2. Open **Editorial Board ORCID Verification** → **Settings**.
+3. Copy **Editorial Board Page URL**.
+
+URL pattern examples:
+
+- With index.php routing:
+	- `https://your-domain/index.php/<journalPath>/editorialBoard/index`
+- With clean URLs:
+	- `https://your-domain/<journalPath>/editorialBoard/index`
+
+To add it to the website menu (Remote URL):
+
+1. Go to **Dashboard → Settings → Website → Navigation Menus**.
+2. Open the target menu (Primary or Footer).
+3. Click **Add Item** → **Remote URL**.
+4. Set title (for example: **Editorial Board**).
+5. Paste the copied Editorial Board Page URL.
+6. Save and position the item in the menu.
 
 ## Manual Installation
 

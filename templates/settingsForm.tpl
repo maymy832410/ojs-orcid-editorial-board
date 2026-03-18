@@ -18,6 +18,7 @@
 					<li>{translate key="plugins.generic.orcidEditorialBoard.settings.step3"}</li>
 					<li>{translate key="plugins.generic.orcidEditorialBoard.settings.step4"} <br><code style="background:#e2e8f0;padding:2px 6px;border-radius:4px;">{$redirectUri|escape}</code></li>
 					<li>{translate key="plugins.generic.orcidEditorialBoard.settings.step5"}</li>
+					<li>{translate key="plugins.generic.orcidEditorialBoard.settings.step6"}</li>
 				</ol>
 			</div>
 		{/fbvFormSection}
@@ -45,6 +46,13 @@
 				{$redirectUri|escape}
 			</div>
 			<p style="font-size:0.82rem;color:#64748b;margin-top:4px;">{translate key="plugins.generic.orcidEditorialBoard.settings.redirectUriHelp"}</p>
+		{/fbvFormSection}
+
+		{fbvFormSection title="plugins.generic.orcidEditorialBoard.settings.editorialBoardUrl"}
+			<div style="background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:10px 14px;font-family:monospace;font-size:0.88rem;word-break:break-all;">
+				{$editorialBoardUrl|escape}
+			</div>
+			<p style="font-size:0.82rem;color:#64748b;margin-top:4px;">{translate key="plugins.generic.orcidEditorialBoard.settings.editorialBoardUrlHelp"}</p>
 		{/fbvFormSection}
 	{/fbvFormArea}
 

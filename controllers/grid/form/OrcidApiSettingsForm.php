@@ -51,6 +51,15 @@ class OrcidApiSettingsForm extends Form
         );
         $templateMgr->assign('redirectUri', $redirectUri);
 
+        $editorialBoardUrl = $request->getDispatcher()->url(
+            $request,
+            \APP\core\Application::ROUTE_PAGE,
+            $context ? $context->getPath() : null,
+            'editorialBoard',
+            'index'
+        );
+        $templateMgr->assign('editorialBoardUrl', $editorialBoardUrl);
+
         $savedSecret = $this->plugin->getSetting($this->contextId, 'orcidClientSecret');
         if ($savedSecret) {
             $templateMgr->assign('maskedSecret', str_repeat('*', max(0, strlen($savedSecret) - 4)) . substr($savedSecret, -4));

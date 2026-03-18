@@ -2,6 +2,15 @@
 
 All notable changes to this plugin are documented in this file.
 
+## [1.6.6.0] - 2026-03-19
+
+### Added
+- Plugin settings now display a generated **Editorial Board Page URL** for easy copy/use.
+
+### Changed
+- Expanded settings tutorial to include navigation setup guidance (Remote URL menu item flow).
+- Updated README with public editorial page URL and navigation steps.
+
 ## [1.6.5.1] - 2026-03-19
 
 ### Fixed
