@@ -1,0 +1,11 @@
+.DS_Store
+*.log
+*.tmp
+*.swp
+
+# Release artifacts
+*.tar.gz
+*.zip
+
+# macOS
+._*

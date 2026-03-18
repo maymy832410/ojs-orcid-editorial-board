@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE emails SYSTEM "../../../lib/pkp/dtd/emailTemplates.dtd">
+
+<emails>
+	<email key="EDITORIAL_BOARD_ORCID_CONSENT" name="plugins.generic.orcidEditorialBoard.consentRequest.name" subject="plugins.generic.orcidEditorialBoard.consentRequest.subject" body="plugins.generic.orcidEditorialBoard.consentRequest.body"/>
+	<email key="EDITORIAL_BOARD_COI_REQUEST" name="plugins.generic.orcidEditorialBoard.coiRequest.name" subject="plugins.generic.orcidEditorialBoard.coiRequest.subject" body="plugins.generic.orcidEditorialBoard.coiRequest.body"/>
+	<email key="EDITORIAL_BOARD_CHANGE_NOTIFICATION" name="plugins.generic.orcidEditorialBoard.changeNotification.name" subject="plugins.generic.orcidEditorialBoard.changeNotification.subject" body="plugins.generic.orcidEditorialBoard.changeNotification.body"/>
+	<email key="EDITORIAL_BOARD_INVITATION" name="plugins.generic.orcidEditorialBoard.invitation.name" subject="plugins.generic.orcidEditorialBoard.invitation.subject" body="plugins.generic.orcidEditorialBoard.invitation.body"/>
+	<email key="EDITORIAL_BOARD_DENIAL_CONFIRMATION" name="plugins.generic.orcidEditorialBoard.denialConfirmation.name" subject="plugins.generic.orcidEditorialBoard.denialConfirmation.subject" body="plugins.generic.orcidEditorialBoard.denialConfirmation.body"/>
+</emails>

@@ -1,0 +1,965 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+
+msgid "plugins.generic.orcidEditorialBoard.displayName"
+msgstr "Editorial Board ORCID Verification"
+
+msgid "plugins.generic.orcidEditorialBoard.pageTitle"
+msgstr "Editorial Board"
+
+msgid "plugins.generic.orcidEditorialBoard.description"
+msgstr "Manage editorial board members and verify their identity through ORCID authentication."
+
+msgid "plugins.generic.orcidEditorialBoard.tabTitle"
+msgstr "Editorial Board (ORCID)"
+
+msgid "plugins.generic.orcidEditorialBoard.consentRequest.name"
+msgstr "Editorial Board ORCID Consent"
+
+msgid "plugins.generic.orcidEditorialBoard.consentRequest.subject"
+msgstr "Please verify your editorial role via ORCID"
+
+msgid "plugins.generic.orcidEditorialBoard.consentRequest.body"
+msgstr "<div style=\"margin:0;padding:0;background:#f6f8fb;\">\n  <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"background:#f6f8fb;padding:24px 0;\">\n    <tr>\n      <td align=\"center\" style=\"padding:0 12px;\">\n        <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" width=\"620\" style=\"max-width:620px;background:#ffffff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;\">\n          <tr>\n            <td style=\"background:linear-gradient(135deg,#0f172a,#1e293b);padding:22px 26px;\">\n              <div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#ffffff;font-size:15px;opacity:.95;\">Editorial Board Verification</div>\n              <div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#ffffff;font-size:20px;font-weight:700;line-height:1.3;margin-top:4px;\">{$journalName}</div>\n            </td>\n          </tr>\n          <tr>\n            <td style=\"padding:26px 26px 10px 26px;\">\n              <div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#111827;font-size:18px;font-weight:700;\">ORCID consent required</div>\n              <div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#374151;font-size:14px;line-height:1.7;margin-top:10px;\">\n                Dear {$memberName},<br><br>\n                You have been listed on the editorial board of <strong>{$journalName}</strong>. To confirm your awareness and consent, please sign in to your personal ORCID account and authorize this journal’s verification request.\n              </div>\n            </td>\n          </tr>\n          <tr>\n            <td align=\"center\" style=\"padding:18px 26px 18px 26px;\">\n              <a href=\"{$consentUrl}\" style=\"display:inline-block;background:#16a34a;color:#ffffff;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-size:14px;font-weight:700;padding:12px 18px;border-radius:10px;\">Verify via ORCID</a>\n              <div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#6b7280;font-size:12px;line-height:1.6;margin-top:12px;\">\n                If the button does not work, copy and paste this link into your browser:<br>\n                <span style=\"word-break:break-all;\">{$consentUrl}</span>\n              </div>\n            </td>\n          </tr>\n          <tr>\n            <td style=\"padding:0 26px 22px 26px;\">\n              <div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#374151;font-size:13px;line-height:1.7;background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:14px 14px;\">\n                <strong>Why this matters:</strong> ORCID authentication can only be completed by the ORCID account owner. This helps prevent the listing of editorial board members without consent.\n              </div>\n            </td>\n          </tr>\n          <tr>\n            <td style=\"padding:18px 26px;background:#f9fafb;border-top:1px solid #e5e7eb;\">\n              <div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#6b7280;font-size:12px;line-height:1.65;\">\n                <div><strong>{$footerLine1}</strong></div>\n                <div>{$footerLine2}</div>\n                <div>{$footerLine3}</div>\n              </div>\n            </td>\n          </tr>\n        </table>\n      </td>\n    </tr>\n  </table>\n</div>"
+
+msgid "plugins.generic.orcidEditorialBoard.consentSuccess"
+msgstr "Your ORCID identity has been verified successfully. You can close this page."
+
+msgid "plugins.generic.orcidEditorialBoard.consentDenied"
+msgstr "You declined to grant ORCID access. No changes were made to your ORCID record."
+
+msgid "plugins.generic.orcidEditorialBoard.sendConsent"
+msgstr "Send consent email"
+
+msgid "plugins.generic.orcidEditorialBoard.sendConsent.confirm"
+msgstr "Send a new ORCID consent email to this editorial member?"
+
+msgid "plugins.generic.orcidEditorialBoard.verifiedShort"
+msgstr "Verified"
+
+msgid "plugins.generic.orcidEditorialBoard.notVerifiedShort"
+msgstr "Not verified"
+
+msgid "plugins.generic.orcidEditorialBoard.verifiedViaOrcid"
+msgstr "Verified via ORCID"
+
+msgid "plugins.generic.orcidEditorialBoard.verifiedTooltip"
+msgstr "This member's editorial role is verified on their ORCID record"
+
+msgid "plugins.generic.orcidEditorialBoard.verifyOnOrcid"
+msgstr "Verify on ORCID"
+
+msgid "plugins.generic.orcidEditorialBoard.verifyOnOrcidTooltip"
+msgstr "Click to verify this member's editorial role directly on ORCID.org"
+
+msgid "plugins.generic.orcidEditorialBoard.pendingVerification"
+msgstr "Pending verification"
+
+msgid "plugins.generic.orcidEditorialBoard.footerNote"
+msgstr "Editorial roles marked as verified have been confirmed through ORCID. Click 'Verify on ORCID' to independently confirm."
+
+msgid "plugins.generic.orcidEditorialBoard.orcidStatus"
+msgstr "ORCID status"
+
+msgid "plugins.generic.orcidEditorialBoard.orcidId"
+msgstr "ORCID iD"
+
+msgid "plugins.generic.orcidEditorialBoard.scopusId"
+msgstr "Scopus ID"
+
+msgid "plugins.generic.orcidEditorialBoard.googleScholar"
+msgstr "Google Scholar URL or ID"
+
+msgid "plugins.generic.orcidEditorialBoard.photoUrl"
+msgstr "Photo URL"
+
+msgid "plugins.generic.orcidEditorialBoard.country"
+msgstr "Country"
+
+msgid "plugins.generic.orcidEditorialBoard.validation.country"
+msgstr "Please select a country."
+
+msgid "plugins.generic.orcidEditorialBoard.openalex.search"
+msgstr "Search OpenAlex"
+
+msgid "plugins.generic.orcidEditorialBoard.openalex.refresh"
+msgstr "Refresh OpenAlex data"
+
+msgid "plugins.generic.orcidEditorialBoard.openalex.refresh.confirm"
+msgstr "Re-fetch this editor's OpenAlex data and update cached keywords?"
+
+msgid "plugins.generic.orcidEditorialBoard.openalex.searchTitle"
+msgstr "Select the correct author from OpenAlex"
+
+msgid "plugins.generic.orcidEditorialBoard.openalex.searchInstructions"
+msgstr "We searched OpenAlex for {$name}. Please select the correct author to link their profile and keywords."
+
+msgid "plugins.generic.orcidEditorialBoard.openalex.institution"
+msgstr "Institution"
+
+msgid "plugins.generic.orcidEditorialBoard.openalex.works"
+msgstr "Works"
+
+msgid "plugins.generic.orcidEditorialBoard.openalex.citedBy"
+msgstr "Citations"
+
+msgid "plugins.generic.orcidEditorialBoard.openalex.hIndex"
+msgstr "H-index"
+
+msgid "plugins.generic.orcidEditorialBoard.openalex.select"
+msgstr "Select"
+
+msgid "plugins.generic.orcidEditorialBoard.openalex.noResults"
+msgstr "No matching authors were found in OpenAlex."
+
+msgid "plugins.generic.orcidEditorialBoard.diversity.title"
+msgstr "Geographic Diversity"
+
+msgid "plugins.generic.orcidEditorialBoard.diversity.count"
+msgstr "Representing {$total} countries"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.title"
+msgstr "Bulk Add Editors (OpenAlex)"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.searchLabel"
+msgstr "Search OpenAlex to add editors"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.searchPlaceholder"
+msgstr "Search by name or name + affiliation"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.searchButton"
+msgstr "Search"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.stagedTitle"
+msgstr "Staged editors (ready to review)"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.addToStaged"
+msgstr "Add to staged list"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.noStaged"
+msgstr "No editors staged yet. Search and add candidates."
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.saveAll"
+msgstr "Save all editors"
+
+msgid "plugins.generic.orcidEditorialBoard.affiliation"
+msgstr "Affiliation"
+
+msgid "plugins.generic.orcidEditorialBoard.sortOrder"
+msgstr "Display Order"
+
+msgid "plugins.generic.orcidEditorialBoard.auditorNotice.title"
+msgstr "Independent Editorial Board Verification"
+
+msgid "plugins.generic.orcidEditorialBoard.auditorNotice.body"
+msgstr "Each editorial board member has been asked to verify their identity by signing in to their personal ORCID account. A green verified badge means the person has authenticated their ORCID iD — confirming they are aware of and consent to their listed role. This authentication cannot be performed or simulated by the journal administrator. Click <strong>\"Verify Now\"</strong> on any member's card to trigger a live check against the ORCID API."
+
+msgid "plugins.generic.orcidEditorialBoard.validation.fullName"
+msgstr "Please enter a name."
+
+msgid "plugins.generic.orcidEditorialBoard.validation.role"
+msgstr "Please enter a role."
+
+msgid "plugins.generic.orcidEditorialBoard.validation.email"
+msgstr "Please enter a valid email address."
+
+msgid "plugins.generic.orcidEditorialBoard.notice.orcidNotConfigured"
+msgstr "ORCID API is not configured. Go to Plugin Settings to enter your ORCID credentials."
+
+msgid "plugins.generic.orcidEditorialBoard.none"
+msgstr "No editorial board members have been added yet."
+
+msgid "plugins.generic.orcidEditorialBoard.error.orcidNotConfigured"
+msgstr "ORCID API credentials are missing or invalid. Please configure them in the plugin settings."
+
+msgid "plugins.generic.orcidEditorialBoard.error.consentExpired"
+msgstr "This consent link has expired. Please request a new one."
+
+msgid "plugins.generic.orcidEditorialBoard.error.token"
+msgstr "Could not obtain an ORCID access token."
+
+msgid "plugins.generic.orcidEditorialBoard.action.accept.description"
+msgstr "You are about to accept the editorial board invitation for {$journalName}. Please sign in with ORCID to verify your identity."
+
+msgid "plugins.generic.orcidEditorialBoard.action.deny.description"
+msgstr "You are about to decline the editorial board invitation for {$journalName}. Please sign in with ORCID to verify your identity."
+
+msgid "plugins.generic.orcidEditorialBoard.action.coi.description"
+msgstr "You are about to submit your Conflict of Interest declaration for {$journalName}. Please sign in with ORCID to verify your identity."
+
+msgid "plugins.generic.orcidEditorialBoard.action.orcidDenied"
+msgstr "ORCID authentication was cancelled. No action has been taken. Please try again using the link in your email."
+
+msgid "plugins.generic.orcidEditorialBoard.action.orcidMismatch"
+msgstr "The ORCID iD you signed in with does not match the one on file for this editorial board member. Please sign in with the correct ORCID account."
+
+msgid "plugins.generic.orcidEditorialBoard.action.landing.subtitle"
+msgstr "Editorial Board — Identity Verification Required"
+
+msgid "plugins.generic.orcidEditorialBoard.action.landing.hello"
+msgstr "Hello, {$memberName}."
+
+msgid "plugins.generic.orcidEditorialBoard.action.landing.signIn"
+msgstr "Sign in with ORCID"
+
+msgid "plugins.generic.orcidEditorialBoard.action.landing.whyTitle"
+msgstr "Why is ORCID sign-in required?"
+
+msgid "plugins.generic.orcidEditorialBoard.action.landing.whyBody"
+msgstr "To protect the integrity of editorial board decisions, we verify your identity through ORCID before processing any action. Your ORCID iD must match the one stored in our records."
+
+msgid "plugins.generic.orcidEditorialBoard.error.missingOrgData"
+msgstr "Organization data (city and country) is missing. Update ORCID config."
+
+msgid "plugins.generic.orcidEditorialBoard.error.employment"
+msgstr "Could not add the employment record to ORCID."
+
+msgid "emailTemplate.variable.orcid.consentUrl"
+msgstr "Link the recipient should click to authorize via ORCID."
+
+msgid "emailTemplate.variable.orcid.coiUrl"
+msgstr "Link the recipient should click to declare conflicts of interest."
+
+msgid "emailTemplate.variable.orcid.memberName"
+msgstr "Name of the editorial board member."
+
+msgid "plugins.generic.orcidEditorialBoard.coiRequest.name"
+msgstr "Editorial Board COI Declaration"
+
+msgid "plugins.generic.orcidEditorialBoard.coiRequest.description"
+msgstr "Email sent to editorial board members requesting a conflict-of-interest declaration."
+
+msgid "plugins.generic.orcidEditorialBoard.coiRequest.subject"
+msgstr "Conflict of Interest Declaration Required"
+
+msgid "plugins.generic.orcidEditorialBoard.coiRequest.body"
+msgstr "<div style=\"margin:0;padding:0;background:#f6f8fb;\">\n  <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"background:#f6f8fb;padding:24px 0;\">\n    <tr>\n      <td align=\"center\" style=\"padding:0 12px;\">\n        <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" width=\"620\" style=\"max-width:620px;background:#ffffff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;\">\n          <tr>\n            <td style=\"background:linear-gradient(135deg,#111827,#334155);padding:22px 26px;\">\n              <div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#ffffff;font-size:15px;opacity:.95;\">Disclosure Request</div>\n              <div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#ffffff;font-size:20px;font-weight:700;line-height:1.3;margin-top:4px;\">{$journalName}</div>\n            </td>\n          </tr>\n          <tr>\n            <td style=\"padding:26px 26px 10px 26px;\">\n              <div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#111827;font-size:18px;font-weight:700;\">Conflict of Interest (COI) disclosure form</div>\n              <div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#374151;font-size:14px;line-height:1.7;margin-top:10px;\">\n                Dear {$memberName},<br><br>\n                As a member of the editorial board of <strong>{$journalName}</strong>, we kindly ask you to complete a conflict-of-interest disclosure. This supports transparency and editorial integrity.\n              </div>\n            </td>\n          </tr>\n          <tr>\n            <td align=\"center\" style=\"padding:18px 26px 18px 26px;\">\n              <a href=\"{$coiUrl}\" style=\"display:inline-block;background:#2563eb;color:#ffffff;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-size:14px;font-weight:700;padding:12px 18px;border-radius:10px;\">Open COI Disclosure Form</a>\n              <div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#6b7280;font-size:12px;line-height:1.6;margin-top:12px;\">\n                If the button does not work, copy and paste this link into your browser:<br>\n                <span style=\"word-break:break-all;\">{$coiUrl}</span>\n              </div>\n            </td>\n          </tr>\n          <tr>\n            <td style=\"padding:18px 26px;background:#f9fafb;border-top:1px solid #e5e7eb;\">\n              <div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#6b7280;font-size:12px;line-height:1.65;\">\n                <div><strong>{$footerLine1}</strong></div>\n                <div>{$footerLine2}</div>\n                <div>{$footerLine3}</div>\n              </div>\n            </td>\n          </tr>\n        </table>\n      </td>\n    </tr>\n  </table>\n</div>"
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.journalUrl"
+msgstr "Journal website URL."
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.contactName"
+msgstr "Journal contact name from OJS settings."
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.contactEmail"
+msgstr "Journal contact email from OJS settings."
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.publisherName"
+msgstr "Publisher/institution name from OJS settings (if available)."
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.footerLine1"
+msgstr "Email footer line 1 (journal and optional publisher)."
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.footerLine2"
+msgstr "Email footer line 2 (website)."
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.footerLine3"
+msgstr "Email footer line 3 (contact)."
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.link"
+msgstr "Report false claim"
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.tooltip"
+msgstr "If you are the owner of this ORCID iD and do not serve on this board, you can report this listing."
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.title"
+msgstr "Report an Editorial Board Listing"
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.subtitle"
+msgstr "Use this process if you are the owner of the ORCID iD shown on the editorial card and you do not consent to be listed as an editor."
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.journal"
+msgstr "Journal"
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.member"
+msgstr "Editorial board member"
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.orcid"
+msgstr "ORCID iD"
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.warning"
+msgstr "You will be asked to sign in to your personal ORCID account. The listing can only be removed when the ORCID account matches the ORCID iD on the card. This helps prevent false or malicious reports."
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.continue"
+msgstr "Continue with ORCID"
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.matchedTitle"
+msgstr "ORCID identity verified"
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.matchedBody"
+msgstr "Your ORCID iD matches the editorial listing for {$memberName} at {$journalName}. If you do not serve on this board, you may now remove this listing from the public page."
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.confirmRemove"
+msgstr "Confirm: I do not serve on this board"
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.removedTitle"
+msgstr "Listing removed at your request"
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.removedBody"
+msgstr "The editorial board listing associated with your ORCID iD has been hidden from the public page. The journal has been notified of your request."
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.mismatchTitle"
+msgstr "ORCID account does not match this listing"
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.mismatchBody"
+msgstr "The ORCID account you signed in with does not match the ORCID iD shown on this editorial listing. We cannot process this report. Check that you are signing in with the same ORCID iD displayed on the card."
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.expiredTitle"
+msgstr "This report link has expired"
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.expiredBody"
+msgstr "For security reasons, report links are time-limited. Please start the report process again from the editorial board page if you still wish to dispute this listing."
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.deniedTitle"
+msgstr "ORCID access was not granted"
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.deniedBody"
+msgstr "You declined to grant access to your ORCID account. Without ORCID authentication we cannot verify your identity or process your report."
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.errorTitle"
+msgstr "Unable to process this report"
+
+msgid "plugins.generic.orcidEditorialBoard.reportFalseClaim.errorBody"
+msgstr "An error occurred while processing this report. Please try again later or contact the journal if the issue persists."
+
+msgid "plugins.generic.orcidEditorialBoard.coi.pageTitle"
+msgstr "Conflict of Interest Declaration"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.formTitle"
+msgstr "Conflict of Interest Declaration"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.disclosure.title"
+msgstr "Disclosure Form"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.disclosure.intro"
+msgstr "Please complete this disclosure form. Select all items that apply and provide details where requested. Your disclosure will be stored as part of the journal’s editorial integrity record."
+
+msgid "plugins.generic.orcidEditorialBoard.coi.detailsPlaceholder"
+msgstr "Please provide details here…"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.section1.title"
+msgstr "1. Financial Conflicts of Interest"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.section1.opt.support"
+msgstr "Financial support or investments related to the journal or manuscript"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.section1.opt.honoraria"
+msgstr "Honoraria or other payments received from organizations related to the manuscript"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.section1.opt.other"
+msgstr "Other financial interests"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.section1.details"
+msgstr "Details of Financial Conflicts"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.section2.title"
+msgstr "2. Personal or Professional Conflicts of Interest"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.section2.opt.professional"
+msgstr "Professional relationships with authors, reviewers, or institutions related to the manuscript"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.section2.opt.personal"
+msgstr "Personal relationships with authors, reviewers, or institutions related to the manuscript"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.section2.opt.advisory"
+msgstr "Advisory roles or board memberships related to the manuscript"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.section2.opt.other"
+msgstr "Other personal or professional relationships"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.section2.details"
+msgstr "Details of Personal or Professional Conflicts"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.section3.title"
+msgstr "3. Financial Interests in Related Organizations"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.section3.details"
+msgstr "If yes, please provide details"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.section4.title"
+msgstr "4. Other Potential Conflicts of Interest"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.section5.title"
+msgstr "5. Declaration"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.section5.text"
+msgstr "By signing below, you confirm that you have disclosed all potential conflicts of interest related to your role and understand that any undisclosed conflicts may affect the review process or publication."
+
+msgid "plugins.generic.orcidEditorialBoard.coi.section5.signedBy"
+msgstr "Signed by"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.error.declarationRequired"
+msgstr "Please confirm the declaration to submit this disclosure."
+
+msgid "plugins.generic.orcidEditorialBoard.coi.error.financialDetailsRequired"
+msgstr "Please provide details for the selected financial conflicts."
+
+msgid "plugins.generic.orcidEditorialBoard.coi.error.personalDetailsRequired"
+msgstr "Please provide details for the selected personal/professional conflicts."
+
+msgid "plugins.generic.orcidEditorialBoard.coi.error.orgFinancialDetailsRequired"
+msgstr "Please provide details for your financial interests in related organizations."
+
+msgid "plugins.generic.orcidEditorialBoard.coi.question"
+msgstr "Do you have any conflicts of interest to declare in relation to your editorial role?"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.noConflicts"
+msgstr "No, I have no conflicts of interest to declare."
+
+msgid "plugins.generic.orcidEditorialBoard.coi.hasConflicts"
+msgstr "Yes, I have conflicts of interest to declare."
+
+msgid "plugins.generic.orcidEditorialBoard.coi.describeConflicts"
+msgstr "Please describe your conflicts of interest:"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.textRequired"
+msgstr "Please describe your conflicts of interest when declaring them."
+
+msgid "plugins.generic.orcidEditorialBoard.coi.submit"
+msgstr "Submit Declaration"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.successMessage"
+msgstr "Your conflict-of-interest declaration has been recorded successfully."
+
+msgid "plugins.generic.orcidEditorialBoard.coi.successDetail"
+msgstr "Thank you for your transparency. You may close this page."
+
+msgid "plugins.generic.orcidEditorialBoard.coi.alreadyDeclared"
+msgstr "You have already submitted your conflict-of-interest declaration."
+
+msgid "plugins.generic.orcidEditorialBoard.coi.declaredOn"
+msgstr "Declared on"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.statement"
+msgstr "Statement"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.invalidToken"
+msgstr "This COI declaration link is invalid or has already been used."
+
+msgid "plugins.generic.orcidEditorialBoard.coi.tokenExpired"
+msgstr "This COI declaration link has expired. Please request a new one from the journal editor."
+
+msgid "plugins.generic.orcidEditorialBoard.coi.sendEmail"
+msgstr "Send COI request"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.sendConfirm"
+msgstr "Send a conflict-of-interest declaration request email to this editorial member?"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.status"
+msgstr "COI Status"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.statusDeclared"
+msgstr "COI Declared"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.statusPending"
+msgstr "COI Pending"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.badge"
+msgstr "COI Declared"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.badgePending"
+msgstr "COI Pending"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.declaredTooltip"
+msgstr "This member has declared their conflicts of interest"
+
+msgid "plugins.generic.orcidEditorialBoard.coi.pendingTooltip"
+msgstr "Conflict-of-interest declaration is pending"
+
+msgid "plugins.generic.orcidEditorialBoard.tenureStart"
+msgstr "Tenure Start (YYYY-MM-DD)"
+
+msgid "plugins.generic.orcidEditorialBoard.tenureEnd"
+msgstr "Tenure End (YYYY-MM-DD, optional)"
+
+msgid "plugins.generic.orcidEditorialBoard.tenure.active"
+msgstr "Active"
+
+msgid "plugins.generic.orcidEditorialBoard.tenure.expired"
+msgstr "Expired"
+
+msgid "plugins.generic.orcidEditorialBoard.tenure.until"
+msgstr "until"
+
+msgid "plugins.generic.orcidEditorialBoard.visibility"
+msgstr "Visibility"
+
+msgid "plugins.generic.orcidEditorialBoard.visibleOnPage"
+msgstr "Visible on public editorial board page"
+
+msgid "plugins.generic.orcidEditorialBoard.hideEditor"
+msgstr "Hide editor"
+
+msgid "plugins.generic.orcidEditorialBoard.showEditor"
+msgstr "Show editor"
+
+msgid "plugins.generic.orcidEditorialBoard.toggleVisibility.confirm"
+msgstr "Toggle the visibility of this editorial board member on the public page?"
+
+msgid "plugins.generic.orcidEditorialBoard.tenure.reminderSubject"
+msgstr "Editorial Board Tenure Renewal Reminder"
+
+msgid "plugins.generic.orcidEditorialBoard.tenure.reminderBody"
+msgstr "Dear {$memberName},\n\nYour editorial board tenure at {$journalName} is set to end on {$tenureEnd}. If you wish to continue serving on the editorial board, please contact the journal editor.\n\nThank you for your service."
+
+msgid "plugins.generic.orcidEditorialBoard.tenure.checkExpiry"
+msgstr "Check tenure expiry"
+
+msgid "plugins.generic.orcidEditorialBoard.tenure.checkExpiry.confirm"
+msgstr "Run tenure expiry check? This will mark expired members, auto-hide them, and send reminders."
+
+msgid "plugins.generic.orcidEditorialBoard.settings.instructionsTitle"
+msgstr "ORCID API Setup"
+
+msgid "plugins.generic.orcidEditorialBoard.settings.instructionsHeading"
+msgstr "How to get your free ORCID Public API credentials:"
+
+msgid "plugins.generic.orcidEditorialBoard.settings.step1"
+msgstr "Go to https://orcid.org/developer-tools and sign in with your ORCID account."
+
+msgid "plugins.generic.orcidEditorialBoard.settings.step2"
+msgstr "Register a new application (or use an existing one)."
+
+msgid "plugins.generic.orcidEditorialBoard.settings.step3"
+msgstr "Copy the Client ID and Client Secret shown on the developer tools page."
+
+msgid "plugins.generic.orcidEditorialBoard.settings.step4"
+msgstr "Set the Redirect URI in ORCID to exactly:"
+
+msgid "plugins.generic.orcidEditorialBoard.settings.step5"
+msgstr "Paste the Client ID and Client Secret below and save."
+
+msgid "plugins.generic.orcidEditorialBoard.settings.credentialsTitle"
+msgstr "ORCID API Credentials"
+
+msgid "plugins.generic.orcidEditorialBoard.settings.environment"
+msgstr "API Environment"
+
+msgid "plugins.generic.orcidEditorialBoard.settings.clientId"
+msgstr "Client ID"
+
+msgid "plugins.generic.orcidEditorialBoard.settings.clientSecret"
+msgstr "Client Secret"
+
+msgid "plugins.generic.orcidEditorialBoard.settings.clientIdRequired"
+msgstr "Client ID is required."
+
+msgid "plugins.generic.orcidEditorialBoard.settings.clientSecretRequired"
+msgstr "Client Secret is required."
+
+msgid "plugins.generic.orcidEditorialBoard.settings.redirectUri"
+msgstr "Redirect URI"
+
+msgid "plugins.generic.orcidEditorialBoard.settings.redirectUriHelp"
+msgstr "Copy this URI exactly into your ORCID developer application's Redirect URIs."
+
+msgid "plugins.generic.orcidEditorialBoard.settings.currentSecret"
+msgstr "Currently saved"
+
+msgid "plugins.generic.orcidEditorialBoard.settings.testSuccess"
+msgstr "Connection successful! Your ORCID API credentials are valid."
+
+msgid "plugins.generic.orcidEditorialBoard.settings.testFail"
+msgstr "Connection failed. Please check your Client ID and Client Secret."
+
+msgid "plugins.generic.orcidEditorialBoard.consentIdLabel"
+msgstr "Consent ID"
+
+msgid "plugins.generic.orcidEditorialBoard.consentIdTooltip"
+msgstr "Cryptographic fingerprint generated from the ORCID authentication token"
+
+msgid "plugins.generic.orcidEditorialBoard.verifyNow"
+msgstr "Verify Now"
+
+msgid "plugins.generic.orcidEditorialBoard.verifyNowTooltip"
+msgstr "Trigger a live verification check against the ORCID API"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.pageTitle"
+msgstr "ORCID Verification Report"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.liveCheck"
+msgstr "Verified just now (live ORCID API check)"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.consentDetails"
+msgstr "Consent Details"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.consentId"
+msgstr "Consent Fingerprint"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.consentDate"
+msgstr "Last Verified"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.orcidData"
+msgstr "ORCID Record Data"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.orcidName"
+msgstr "Name on ORCID"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.orcidAffiliations"
+msgstr "ORCID Affiliations"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.matchComparison"
+msgstr "Match Comparison"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.journalName"
+msgstr "Journal-listed Name"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.match"
+msgstr "Match"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.mismatch"
+msgstr "Mismatch"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.orcidRegisteredName"
+msgstr "ORCID Registered Name"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.journalOrcid"
+msgstr "Journal-listed ORCID iD"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.explainTitle"
+msgstr "What does this verification mean?"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.explainText"
+msgstr "The consent token stored by this plugin can only be generated when the ORCID account owner signs in with their personal credentials and authorizes this journal's application. The journal administrator cannot create, forge, or simulate this authorization. A successful live check (green badge above) confirms that the stored authorization remains active and was not revoked by the ORCID account holder."
+
+msgid "plugins.generic.orcidEditorialBoard.verify.revoked"
+msgstr "AUTHORIZATION REVOKED"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.revokedExplain"
+msgstr "This editorial board member previously authorized their ORCID account, but the authorization has since been revoked. The member's verification badge has been removed. The journal editor may request the member to re-authorize."
+
+msgid "plugins.generic.orcidEditorialBoard.verify.notYetVerified"
+msgstr "Not Yet Verified"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.notYetExplain"
+msgstr "This editorial board member has not yet completed the ORCID authentication process. A consent email may have been sent but has not been acted upon."
+
+msgid "plugins.generic.orcidEditorialBoard.verify.errorTitle"
+msgstr "Verification Error"
+
+msgid "plugins.generic.orcidEditorialBoard.verify.errorExplain"
+msgstr "An error occurred while contacting the ORCID API. Please try again later."
+
+msgid "plugins.generic.orcidEditorialBoard.verify.backToBoard"
+msgstr "Back to Editorial Board"
+
+msgid "plugins.generic.orcidEditorialBoard.grid.addMember"
+msgstr "Add Editorial Board Member"
+
+msgid "plugins.generic.orcidEditorialBoard.error.orcidMismatch"
+msgstr "The ORCID account you authenticated with does not match the ORCID iD on file for this editorial board member. Please sign in with the correct ORCID account."
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.previous"
+msgstr "Previous"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.next"
+msgstr "Next"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.pageInfo"
+msgstr "Page {$page} · {$count} results"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.otherAffiliation"
+msgstr "Enter affiliation name..."
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.title"
+msgstr "Add Editorial Board Members"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.searchLabel"
+msgstr "Search OpenAlex for authors and add them to the staging area."
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.searchPlaceholder"
+msgstr "Author name, ORCID, or institution…"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.searchButton"
+msgstr "Search"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.stagedTitle"
+msgstr "Staged Editors"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.saveAll"
+msgstr "Save all editors"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.noStaged"
+msgstr "No editors staged yet. Search and add candidates first."
+
+msgid "plugins.generic.orcidEditorialBoard.changeNotification.name"
+msgstr "Editorial Board — Badge Change Notification"
+
+msgid "plugins.generic.orcidEditorialBoard.changeNotification.description"
+msgstr "Sent to an editorial board member when their badge information is changed by an editor."
+
+msgid "plugins.generic.orcidEditorialBoard.changeNotification.subject"
+msgstr "Your editorial board badge information has been updated — {$journalName}"
+
+msgid "plugins.generic.orcidEditorialBoard.changeNotification.body"
+msgstr "<div style=\"margin:0;padding:0;background:#f6f8fb;\"><table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"background:#f6f8fb;padding:24px 0;\"><tr><td align=\"center\" style=\"padding:0 12px;\"><table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" width=\"620\" style=\"max-width:620px;background:#ffffff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;\"><tr><td style=\"background:linear-gradient(135deg,#0f172a,#1e293b);padding:22px 26px;\"><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#ffffff;font-size:15px;opacity:.95;\">Editorial Board Record Updated</div><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#ffffff;font-size:20px;font-weight:700;line-height:1.3;margin-top:4px;\">{$journalName}</div></td></tr><tr><td style=\"padding:26px 26px 10px 26px;\"><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#111827;font-size:18px;font-weight:700;\">Your badge information has been updated</div><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#374151;font-size:14px;line-height:1.7;margin-top:10px;\">Dear {$memberName},<br><br>Your editorial board record at <strong>{$journalName}</strong> has been updated by a journal manager. The following changes were made:</div></td></tr><tr><td style=\"padding:10px 26px 10px 26px;\">{$changeDiffHtml}</td></tr><tr><td style=\"padding:0 26px 10px 26px;\">{$actionsHtml}</td></tr><tr><td style=\"padding:0 26px 22px 26px;\"><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#374151;font-size:13px;line-height:1.7;background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:14px 14px;\"><strong>Need help?</strong> If you did not authorize these changes, you may dispute them within 7 days by visiting the editorial board page and using the &ldquo;Report False Claim&rdquo; link on your profile card.</div></td></tr><tr><td style=\"padding:18px 26px;background:#f9fafb;border-top:1px solid #e5e7eb;\"><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#6b7280;font-size:12px;line-height:1.65;\"><div><strong>{$footerLine1}</strong></div><div>{$footerLine2}</div><div>{$footerLine3}</div></div></td></tr></table></td></tr></table></div>"
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.changeDiff"
+msgstr "Plain-text list of changed fields (before → after)"
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.changeDiffHtml"
+msgstr "HTML table showing changed fields with before and after values"
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.actionsHtml"
+msgstr "HTML block with re-verification and dispute action buttons"
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.consentUrl"
+msgstr "URL for ORCID re-verification consent flow"
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.disputeUrl"
+msgstr "URL to dispute the change via ORCID authentication"
+
+msgid "plugins.generic.orcidEditorialBoard.disputePending"
+msgstr "⏳ Pending confirmation"
+
+msgid "plugins.generic.orcidEditorialBoard.memberStatus"
+msgstr "Member Status"
+
+msgid "plugins.generic.orcidEditorialBoard.validation.dateFormat"
+msgstr "Date must be in YYYY-MM-DD format."
+
+msgid "plugins.generic.orcidEditorialBoard.validation.tenureEndBeforeStart"
+msgstr "Tenure end date cannot be before the start date."
+
+msgid "plugins.generic.orcidEditorialBoard.form.identity"
+msgstr "Identity"
+
+msgid "plugins.generic.orcidEditorialBoard.form.identityDesc"
+msgstr "Core identity fields for this editorial board member."
+
+msgid "plugins.generic.orcidEditorialBoard.form.identifiers"
+msgstr "Academic Identifiers"
+
+msgid "plugins.generic.orcidEditorialBoard.form.identifiersDesc"
+msgstr "Scholarly profile links for verification and discovery."
+
+msgid "plugins.generic.orcidEditorialBoard.form.affiliation"
+msgstr "Affiliation & Location"
+
+msgid "plugins.generic.orcidEditorialBoard.form.affiliationDesc"
+msgstr "Primary institutional affiliation and country."
+
+msgid "plugins.generic.orcidEditorialBoard.form.tenure"
+msgstr "Tenure & Display"
+
+msgid "plugins.generic.orcidEditorialBoard.form.tenureDesc"
+msgstr "Appointment dates, display order, and visibility settings."
+
+msgid "plugins.generic.orcidEditorialBoard.form.status"
+msgstr "Status"
+
+msgid "plugins.generic.orcidEditorialBoard.form.statusDesc"
+msgstr "Read-only indicators set by the system or the member."
+
+msgid "plugins.generic.orcidEditorialBoard.form.removedByOwner"
+msgstr "Removed by Owner"
+
+msgid "plugins.generic.orcidEditorialBoard.form.resetToActive"
+msgstr "Reset to Active"
+
+msgid "plugins.generic.orcidEditorialBoard.form.statusActive"
+msgstr "Active"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.showMore"
+msgstr "Show more"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.showLess"
+msgstr "Show less"
+
+msgid "plugins.generic.orcidEditorialBoard.tenure.activeTooltip"
+msgstr "Tenure is active — more than 90 days remaining"
+
+msgid "plugins.generic.orcidEditorialBoard.tenure.warningTooltip"
+msgstr "Tenure expires within 90 days — consider renewal"
+
+msgid "plugins.generic.orcidEditorialBoard.tenure.expiredTooltip"
+msgstr "Tenure has expired"
+
+msgid "plugins.generic.orcidEditorialBoard.tooltip.email"
+msgstr "Send email to this member"
+
+msgid "plugins.generic.orcidEditorialBoard.tutorial.title"
+msgstr "Welcome to the Editorial Board"
+
+msgid "plugins.generic.orcidEditorialBoard.tutorial.subtitle"
+msgstr "A quick tour of the verification features"
+
+msgid "plugins.generic.orcidEditorialBoard.tutorial.step1.title"
+msgstr "Board Overview"
+
+msgid "plugins.generic.orcidEditorialBoard.tutorial.step1.body"
+msgstr "This page lists all editorial board members with their verified roles, affiliations, and academic profiles."
+
+msgid "plugins.generic.orcidEditorialBoard.tutorial.step2.title"
+msgstr "ORCID Verification"
+
+msgid "plugins.generic.orcidEditorialBoard.tutorial.step2.body"
+msgstr "A green verified badge means the member authenticated via their personal ORCID account. Click 'Verify Now' to trigger a live check."
+
+msgid "plugins.generic.orcidEditorialBoard.tutorial.step3.title"
+msgstr "COI Declarations"
+
+msgid "plugins.generic.orcidEditorialBoard.tutorial.step3.body"
+msgstr "Members with a COI badge have submitted a conflict-of-interest declaration. Pending badges indicate the request was sent but not yet completed."
+
+msgid "plugins.generic.orcidEditorialBoard.tutorial.step4.title"
+msgstr "Report False Claims"
+
+msgid "plugins.generic.orcidEditorialBoard.tutorial.step4.body"
+msgstr "If someone is falsely listed, they can report it. The system requires ORCID authentication to prevent abuse."
+
+msgid "plugins.generic.orcidEditorialBoard.tutorial.skip"
+msgstr "Skip"
+
+msgid "plugins.generic.orcidEditorialBoard.tutorial.next"
+msgstr "Next"
+
+msgid "plugins.generic.orcidEditorialBoard.tutorial.done"
+msgstr "Got it!"
+
+msgid "plugins.generic.orcidEditorialBoard.tutorial.showLink"
+msgstr "Show Tutorial"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.name"
+msgstr "Editorial Board — Invitation"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.description"
+msgstr "Sent to a new editorial board member with their profile details, requesting confirmation or decline."
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.subject"
+msgstr "You have been added to the editorial board — {$journalName}"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.body"
+msgstr "<div style=\"margin:0;padding:0;background:#f6f8fb;\"><table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"background:#f6f8fb;padding:24px 0;\"><tr><td align=\"center\" style=\"padding:0 12px;\"><table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" width=\"620\" style=\"max-width:620px;background:#ffffff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;\"><tr><td style=\"background:linear-gradient(135deg,#0f172a,#1e293b);padding:22px 26px;\"><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#ffffff;font-size:15px;opacity:.95;\">Editorial Board Invitation</div><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#ffffff;font-size:20px;font-weight:700;line-height:1.3;margin-top:4px;\">{$journalName}</div></td></tr><tr><td style=\"padding:26px 26px 10px 26px;\"><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#111827;font-size:18px;font-weight:700;\">Welcome to the Editorial Board</div><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#374151;font-size:14px;line-height:1.7;margin-top:10px;\">Dear {$memberName},<br><br>You have been added to the editorial board of <strong>{$journalName}</strong> as <strong>{$memberRole}</strong>. Please review the details below and confirm your acceptance, or decline if this was made in error.</div></td></tr><tr><td style=\"padding:10px 26px;\"><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-size:13px;font-weight:700;color:#334155;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;\">Your Profile Information</div><table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;\">{$memberDetailsHtml}</table></div></td></tr><tr><td align=\"center\" style=\"padding:20px 26px 10px;\"><table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\"><tr><td style=\"padding-right:10px;\"><a href=\"{$acceptUrl}\" style=\"display:inline-block;background:#16a34a;color:#ffffff;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-size:14px;font-weight:700;padding:12px 24px;border-radius:10px;\">✓ Accept &amp; Confirm</a></td><td><a href=\"{$denyUrl}\" style=\"display:inline-block;background:#f1f5f9;color:#dc2626;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-size:14px;font-weight:700;padding:12px 24px;border-radius:10px;border:1px solid #e2e8f0;\">✕ Decline</a></td></tr></table></td></tr><tr><td style=\"padding:14px 26px 22px;\"><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#374151;font-size:13px;line-height:1.7;background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:14px;\"><strong>What happens when you accept?</strong> By accepting, you consent to being listed on the editorial board and declare that you have no undisclosed conflicts of interest. You may also be asked to complete a full ORCID verification and COI declaration separately.</div></td></tr><tr><td style=\"padding:18px 26px;background:#f9fafb;border-top:1px solid #e5e7eb;\"><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#6b7280;font-size:12px;line-height:1.65;\"><div><strong>{$footerLine1}</strong></div><div>{$footerLine2}</div><div>{$footerLine3}</div></div></td></tr></table></td></tr></table></div>"
+
+msgid "plugins.generic.orcidEditorialBoard.denialConfirmation.name"
+msgstr "Editorial Board — Invitation Declined"
+
+msgid "plugins.generic.orcidEditorialBoard.denialConfirmation.description"
+msgstr "Sent to a member confirming their invitation was declined and the journal has been informed."
+
+msgid "plugins.generic.orcidEditorialBoard.denialConfirmation.subject"
+msgstr "Your editorial board invitation has been declined — {$journalName}"
+
+msgid "plugins.generic.orcidEditorialBoard.denialConfirmation.body"
+msgstr "<div style=\"margin:0;padding:0;background:#f6f8fb;\"><table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"background:#f6f8fb;padding:24px 0;\"><tr><td align=\"center\" style=\"padding:0 12px;\"><table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" width=\"620\" style=\"max-width:620px;background:#ffffff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;\"><tr><td style=\"background:linear-gradient(135deg,#7f1d1d,#991b1b);padding:22px 26px;\"><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#ffffff;font-size:15px;opacity:.95;\">Invitation Declined</div><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#ffffff;font-size:20px;font-weight:700;line-height:1.3;margin-top:4px;\">{$journalName}</div></td></tr><tr><td style=\"padding:26px 26px 10px;\"><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#111827;font-size:18px;font-weight:700;\">Your request has been processed</div><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#374151;font-size:14px;line-height:1.7;margin-top:10px;\">Dear {$memberName},<br><br>This email confirms that you have declined the invitation to serve on the editorial board of <strong>{$journalName}</strong>. Your listing has been removed from the public editorial board page, and the journal administration has been notified of your decision.<br><br>No further action is required on your part.</div></td></tr><tr><td style=\"padding:14px 26px 22px;\"><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#374151;font-size:13px;line-height:1.7;background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:14px;\"><strong>Changed your mind?</strong> If you declined by mistake, please contact the journal editor directly to be re-added to the board.</div></td></tr><tr><td style=\"padding:18px 26px;background:#f9fafb;border-top:1px solid #e5e7eb;\"><div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#6b7280;font-size:12px;line-height:1.65;\"><div><strong>{$footerLine1}</strong></div><div>{$footerLine2}</div><div>{$footerLine3}</div></div></td></tr></table></td></tr></table></div>"
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.acceptUrl"
+msgstr "URL for the member to accept the invitation."
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.denyUrl"
+msgstr "URL for the member to decline the invitation."
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.memberRole"
+msgstr "The role assigned to the editorial board member."
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.memberAffiliation"
+msgstr "The institutional affiliation of the member."
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.memberDetailsHtml"
+msgstr "HTML table rows with the member's complete profile information."
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.accepted.title"
+msgstr "Invitation Accepted"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.accepted.body"
+msgstr "Thank you for accepting! Your editorial board membership at <strong>{$journalName}</strong> has been confirmed. You may be contacted separately for ORCID verification and COI declaration."
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.denied.title"
+msgstr "Invitation Declined"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.denied.body"
+msgstr "You have declined the editorial board invitation for <strong>{$journalName}</strong>. The journal has been notified. No further action is needed."
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.denied.reasonLabel"
+msgstr "Reason for declining (optional)"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.denied.reasonPlaceholder"
+msgstr "Tell us why you are declining…"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.denied.submit"
+msgstr "Confirm Decline"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.expired"
+msgstr "This invitation link has expired. Please contact the journal editor."
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.invalid"
+msgstr "This invitation link is invalid or has already been used."
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.alreadyAccepted"
+msgstr "You have already accepted this invitation."
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.alreadyDenied"
+msgstr "You have already declined this invitation."
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.confirmPopup.title"
+msgstr "Confirm: Save &amp; Notify"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.confirmPopup.body"
+msgstr "This will save all staged editors and send each one an invitation email with their profile information, asking them to accept or decline."
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.confirmPopup.proceed"
+msgstr "Save &amp; Send Invitations"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.confirmPopup.cancel"
+msgstr "Cancel"
+
+msgid "plugins.generic.orcidEditorialBoard.wizard.saveAndNotify"
+msgstr "Save &amp; Notify"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.statusPending"
+msgstr "Invitation Pending"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.statusAccepted"
+msgstr "Invitation Accepted"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.statusDenied"
+msgstr "Invitation Denied"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.statusNotSent"
+msgstr "Not Invited"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.adminDenialNotice"
+msgstr "Editorial board member {$memberName} has DECLINED the invitation to serve on {$journalName}."
+
+msgid "plugins.generic.orcidEditorialBoard.grid.invitationColumn"
+msgstr "Invitation"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.accepted.note"
+msgstr "You may receive additional emails for ORCID verification or conflict-of-interest declaration. Please respond to those as well to complete your onboarding."
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.accepted.coiButton"
+msgstr "Proceed to COI Declaration"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.denied.note"
+msgstr "If you declined by mistake, please contact the journal editor directly to be re-added."
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.denyForm.body"
+msgstr "Dear <strong>{$memberName}</strong>, are you sure you want to decline the editorial board invitation for <strong>{$journalName}</strong>?"
+
+msgid "plugins.generic.orcidEditorialBoard.invitation.denyForm.note"
+msgstr "By declining, your listing will be removed from the public editorial board page and the journal administration will be notified. A confirmation email will be sent to you."
+
+msgid "plugins.generic.orcidEditorialBoard.adminNotification.name"
+msgstr "Editorial Board Admin Notification"
+
+msgid "plugins.generic.orcidEditorialBoard.adminNotification.description"
+msgstr "Notification sent to journal administrators when an editorial board member declines an invitation."
+
+msgid "plugins.generic.orcidEditorialBoard.adminNotification.subject"
+msgstr "Editorial Board Invitation Declined"
+
+msgid "plugins.generic.orcidEditorialBoard.adminNotification.body"
+msgstr "<p>Editorial board member <strong>{$memberName}</strong> ({$memberEmail}) has <strong>declined</strong> the invitation to serve on <strong>{$journalName}</strong> as {$memberRole}.</p><p><strong>Reason:</strong> {$denyReason}</p>"
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.memberEmail"
+msgstr "Email address of the editorial board member."
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.denyReason"
+msgstr "Reason the member gave for declining the invitation."
+
+msgid "plugins.generic.orcidEditorialBoard.about.title"
+msgstr "About"

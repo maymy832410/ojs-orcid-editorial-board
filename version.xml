@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
+
+<!--
+  * version.xml
+  *
+  * Plugin version information.
+  -->
+<version>
+	<application>orcidEditorialBoard</application>
+	<type>plugins.generic</type>
+	<release>1.6.5.0</release>
+	<date>2026-03-18</date>
+	<lazy-load>1</lazy-load>
+	<class>OrcidEditorialBoardPlugin</class>
+</version>
