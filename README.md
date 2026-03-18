@@ -27,7 +27,8 @@ Editorial Board ORCID Verification is a generic plugin for Open Journal Systems 
 
 ## Installation
 
-1. Download a release archive (e.g. `orcidEditorialBoard-v1.6.5.0.tar.gz`).
+1. Download a release archive (e.g. [orcidEditorialBoard-v1.6.5.0.tar.gz](https://github.com/user-attachments/files/26099683/orcidEditorialBoard-v1.6.5.0.tar.gz)
+).
 2. In OJS, go to: **Dashboard → Settings → Website → Plugins → Upload A New Plugin**.
 3. Upload the `.tar.gz` and install.
 4. Enable **Editorial Board ORCID Verification** from the plugin list.
