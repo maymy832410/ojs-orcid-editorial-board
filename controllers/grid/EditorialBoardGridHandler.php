@@ -573,10 +573,136 @@ class EditorialBoardGridHandler extends GridHandler
         return 'orcidEditorialBoardWizard_' . (int) $contextId;
     }
 
+    /**
+     * Keep only the OpenAlex fields needed by finalize/email flows.
+     */
+    private function compactOpenalexPayload(array $data, array $topics = [], array $affiliations = []): array
+    {
+        $topicNames = [];
+        if (!empty($topics)) {
+            foreach (array_slice($topics, 0, 10) as $topic) {
+                if (is_string($topic) && $topic !== '') {
+                    $topicNames[] = $topic;
+                } elseif (is_array($topic) && !empty($topic['display_name'])) {
+                    $topicNames[] = $topic['display_name'];
+                }
+            }
+        } else {
+            foreach (array_slice($data['topics'] ?? [], 0, 10) as $topic) {
+                if (!empty($topic['display_name'])) {
+                    $topicNames[] = $topic['display_name'];
+                }
+            }
+        }
+
+        $compactAffiliations = [];
+        foreach (array_slice($affiliations, 0, 5) as $aff) {
+            if (!is_array($aff)) {
+                continue;
+            }
+            $compactAffiliations[] = [
+                'name' => (string) ($aff['name'] ?? ($aff['institution']['display_name'] ?? '')),
+                'country' => (string) ($aff['country'] ?? ($aff['institution']['country_code'] ?? '')),
+            ];
+        }
+
+        if (empty($compactAffiliations) && !empty($data['last_known_institutions'][0])) {
+            $compactAffiliations[] = [
+                'name' => (string) ($data['last_known_institutions'][0]['display_name'] ?? ''),
+                'country' => (string) ($data['last_known_institutions'][0]['country_code'] ?? ''),
+            ];
+        }
+
+        return [
+            'id' => $data['id'] ?? null,
+            'display_name' => $data['display_name'] ?? null,
+            'orcid' => $data['orcid'] ?? null,
+            'works_count' => $data['works_count'] ?? 0,
+            'cited_by_count' => $data['cited_by_count'] ?? 0,
+            'summary_stats' => [
+                'h_index' => $data['summary_stats']['h_index'] ?? null,
+            ],
+            'topics' => $topicNames,
+            'last_known_institutions' => [
+                [
+                    'display_name' => $data['last_known_institutions'][0]['display_name'] ?? ($compactAffiliations[0]['name'] ?? ''),
+                    'country_code' => $data['last_known_institutions'][0]['country_code'] ?? ($compactAffiliations[0]['country'] ?? ''),
+                ],
+            ],
+            'affiliations' => $compactAffiliations,
+        ];
+    }
+
+    private function compactPayloadFromStagedEntry(array $entry): array
+    {
+        $payload = is_array($entry['payload'] ?? null) ? $entry['payload'] : [];
+
+        $topicSource = $entry['topics'] ?? $entry['keywords'] ?? ($payload['topics'] ?? []);
+        $affiliations = $entry['affiliations'] ?? ($payload['affiliations'] ?? []);
+
+        $openalexId = (string) ($entry['openalexId'] ?? '');
+        $defaultLastInstitution = [
+            [
+                'display_name' => $entry['selected_affiliation'] ?? $entry['affiliation'] ?? ($payload['last_known_institutions'][0]['display_name'] ?? ''),
+                'country_code' => $entry['selected_country'] ?? $entry['country'] ?? ($payload['last_known_institutions'][0]['country_code'] ?? ''),
+            ],
+        ];
+
+        $data = [
+            'id' => $payload['id'] ?? ($openalexId ? ('https://api.openalex.org/authors/' . $openalexId) : null),
+            'display_name' => $entry['display_name'] ?? $entry['fullName'] ?? ($payload['display_name'] ?? null),
+            'orcid' => $entry['orcid'] ?? $entry['orcidId'] ?? ($payload['orcid'] ?? null),
+            'works_count' => $entry['works_count'] ?? ($payload['works_count'] ?? 0),
+            'cited_by_count' => $entry['cited_by_count'] ?? ($payload['cited_by_count'] ?? 0),
+            'summary_stats' => [
+                'h_index' => $entry['h_index'] ?? ($payload['summary_stats']['h_index'] ?? null),
+            ],
+            'last_known_institutions' => $payload['last_known_institutions'] ?? $defaultLastInstitution,
+            'topics' => $payload['topics'] ?? [],
+        ];
+
+        return $this->compactOpenalexPayload($data, is_array($topicSource) ? $topicSource : [], is_array($affiliations) ? $affiliations : []);
+    }
+
     private function getWizardState($request, $contextId): array
     {
         $session = $request->getSession();
-        return $session->getSessionVar($this->getWizardSessionKey($contextId)) ?? [];
+        $state = $session->getSessionVar($this->getWizardSessionKey($contextId)) ?? [];
+        if (!is_array($state) || empty($state)) {
+            return [];
+        }
+
+        $dirty = false;
+        $sanitized = [];
+        foreach ($state as $openalexId => $entry) {
+            if (!is_array($entry)) {
+                $dirty = true;
+                continue;
+            }
+
+            $entry['payload'] = $this->compactPayloadFromStagedEntry($entry);
+
+            if (isset($entry['topics']) && is_array($entry['topics']) && count($entry['topics']) > 10) {
+                $entry['topics'] = array_slice($entry['topics'], 0, 10);
+                $dirty = true;
+            }
+            if (isset($entry['keywords']) && is_array($entry['keywords']) && count($entry['keywords']) > 10) {
+                $entry['keywords'] = array_slice($entry['keywords'], 0, 10);
+                $dirty = true;
+            }
+            if (isset($entry['affiliations']) && is_array($entry['affiliations']) && count($entry['affiliations']) > 5) {
+                $entry['affiliations'] = array_slice($entry['affiliations'], 0, 5);
+                $dirty = true;
+            }
+
+            $sanitized[$openalexId] = $entry;
+        }
+
+        if ($dirty || $sanitized !== $state) {
+            $this->saveWizardState($request, $contextId, $sanitized);
+        }
+
+        return $sanitized;
     }
 
     private function saveWizardState($request, $contextId, array $state): void
@@ -670,6 +796,10 @@ class EditorialBoardGridHandler extends GridHandler
      */
     public function wizardAdd($args, $request)
     {
+        if (!$request->checkCSRF()) {
+            return new JSONMessage(false, __('common.error'));
+        }
+
         $context = $request->getContext();
         $openalexId = (string) $request->getUserVar('openalexId');
         if (!$openalexId) {
@@ -704,11 +834,12 @@ class EditorialBoardGridHandler extends GridHandler
                 'country' => $data['last_known_institutions'][0]['country_code'] ?? '',
             ];
         }
+        $affiliations = array_slice($affiliations, 0, 5);
 
         $state = $this->getWizardState($request, $context->getId());
         $state[$openalexId] = [
             'openalexId' => $openalexId,
-            'payload' => $data,
+            'payload' => $this->compactOpenalexPayload($data, $topics, $affiliations),
             'display_name' => $data['display_name'] ?? '',
             'orcid' => $data['orcid'] ?? '',
             'works_count' => $data['works_count'] ?? 0,
@@ -740,6 +871,10 @@ class EditorialBoardGridHandler extends GridHandler
      */
     public function wizardRemove($args, $request)
     {
+        if (!$request->checkCSRF()) {
+            return new JSONMessage(false, __('common.error'));
+        }
+
         $context = $request->getContext();
         $openalexId = (string) $request->getUserVar('openalexId');
         $state = $this->getWizardState($request, $context->getId());
@@ -753,6 +888,10 @@ class EditorialBoardGridHandler extends GridHandler
      */
     public function wizardUpdate($args, $request)
     {
+        if (!$request->checkCSRF()) {
+            return new JSONMessage(false, __('common.error'));
+        }
+
         $context = $request->getContext();
         $openalexId = (string) $request->getUserVar('openalexId');
         $field = (string) $request->getUserVar('field');
@@ -794,6 +933,10 @@ class EditorialBoardGridHandler extends GridHandler
      */
     public function wizardFinalize($args, $request)
     {
+        if (!$request->checkCSRF()) {
+            return new JSONMessage(false, __('common.error'));
+        }
+
         $context = $request->getContext();
         $contextId = $context->getId();
         $state = $this->getWizardState($request, $contextId);

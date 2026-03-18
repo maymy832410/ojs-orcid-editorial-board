@@ -2,6 +2,13 @@
 
 All notable changes to this plugin are documented in this file.
 
+## [1.6.5.1] - 2026-03-19
+
+### Fixed
+- Reduced wizard session footprint by storing a compact OpenAlex payload in staged entries instead of full API responses.
+- Added server-side CSRF checks to wizard mutation endpoints (`wizardAdd`, `wizardRemove`, `wizardUpdate`, `wizardFinalize`).
+- Improved staged-state sanitization to keep payload/topic/affiliation data bounded and prevent session bloat during bulk additions.
+
 ## [1.6.5.0] - 2026-03-18
 
 ### Added
