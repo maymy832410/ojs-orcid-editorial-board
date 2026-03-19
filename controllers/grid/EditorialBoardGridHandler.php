@@ -301,17 +301,19 @@ class EditorialBoardGridHandler extends GridHandler
 
                 $dispatcher = $dispatcher ?? $request->getDispatcher();
 
-                // Build approve URL (HMAC-signed — lets the member confirm changes and clear the pending badge)
-                $approveSig = hash_hmac('sha256', 'approve:' . $memberId, \APP\plugins\generic\orcidEditorialBoard\OrcidEditorialBoardPlugin::getHmacSecret());
-                $approveUrl = $dispatcher->url(
-                    $request,
-                    Application::ROUTE_PAGE,
-                    $context->getPath(),
-                    'editorialBoard',
-                    'approveEdit',
-                    null,
-                    ['memberId' => $memberId, 'sig' => $approveSig]
-                );
+                // Build approve URL only for non-identity edits (identity changes use ORCID re-verification instead)
+                if (!$identityChanged) {
+                    $approveSig = hash_hmac('sha256', 'approve:' . $memberId, \APP\plugins\generic\orcidEditorialBoard\OrcidEditorialBoardPlugin::getHmacSecret());
+                    $approveUrl = $dispatcher->url(
+                        $request,
+                        Application::ROUTE_PAGE,
+                        $context->getPath(),
+                        'editorialBoard',
+                        'approveEdit',
+                        null,
+                        ['memberId' => $memberId, 'sig' => $approveSig]
+                    );
+                }
 
                 // Build dispute URL — use current OR previous ORCID so original owner can dispute
                 if ($updatedMember->getOrcidId() || $updatedMember->getPreviousOrcidId()) {

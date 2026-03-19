@@ -2,6 +2,11 @@
 
 All notable changes to this plugin are documented in this file.
 
+## [1.6.7.2] - 2026-03-19
+
+### Fixed
+- Identity-change notification emails no longer show both "Re-Verify via ORCID" and "Approve & Confirm Changes" buttons. The approve button now only appears for non-identity edits; identity changes use ORCID re-verification exclusively.
+
 ## [1.6.7.1] - 2026-03-19
 
 ### Improved
