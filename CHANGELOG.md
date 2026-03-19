@@ -2,6 +2,16 @@
 
 All notable changes to this plugin are documented in this file.
 
+## [1.6.7.0] - 2026-03-19
+
+### Added
+- "Approve & Confirm Changes" button in profile change notification emails, allowing members to approve non-identity edits and immediately restore their verified badge.
+- New `approveEdit` public handler with HMAC-signed URL for secure one-click approval.
+- Success page for approved changes with contextual messaging.
+
+### Fixed
+- Non-identity field edits (photo, email, etc.) no longer leave the badge stuck on "⏳ Pending confirmation" with no way to resolve — members can now approve or dispute.
+
 ## [1.6.6.1] - 2026-03-19
 
 ### Fixed

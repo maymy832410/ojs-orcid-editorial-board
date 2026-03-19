@@ -1227,6 +1227,61 @@ class OrcidEditorialBoardHandler extends Handler
     }
 
     /**
+     * Approve profile changes and clear the pending-confirmation dispute window.
+     * Called when the member clicks "Approve & Confirm Changes" in the notification email.
+     */
+    public function approveEdit($args, $request)
+    {
+        $context = $request->getContext();
+        $memberId = (int) $request->getUserVar('memberId');
+        $sig = (string) $request->getUserVar('sig');
+        if (!$context || !$memberId) {
+            return $this->showError($request, __('common.error'));
+        }
+
+        // HMAC signature check
+        $expectedSig = hash_hmac('sha256', 'approve:' . $memberId, OrcidEditorialBoardPlugin::getHmacSecret());
+        if (!$sig || !hash_equals($expectedSig, $sig)) {
+            OrcidEditorialBoardPlugin::log('approveEdit called with invalid HMAC sig for member ' . $memberId);
+            return $this->showError($request, __('common.error'));
+        }
+
+        $dao = DAORegistry::getDAO('EditorialBoardMemberDAO'); /** @var EditorialBoardMemberDAO $dao */
+        $member = $dao->getById($memberId, $context->getId());
+        if (!$member) {
+            return $this->showError($request, __('common.error'));
+        }
+
+        // Check if there is an active dispute window to clear
+        $disputeExpiry = $member->getDisputeExpiresAt();
+        if (!$disputeExpiry || strtotime($disputeExpiry) <= time()) {
+            // No active dispute window — show friendly message instead of error
+            $templateMgr = TemplateManager::getManager($request);
+            $templateMgr->assign([
+                'memberName' => $member->getFullName(),
+                'journalName' => $context->getLocalizedName(),
+                'alreadyApproved' => true,
+            ]);
+            $templateMgr->display($this->getPlugin()->getTemplateResource('approveSuccess.tpl'));
+            return;
+        }
+
+        // Clear the dispute window — badge will show verified again
+        $member->setDisputeExpiresAt(null);
+        $dao->updateObject($member);
+
+        OrcidEditorialBoardPlugin::log('Member ' . $memberId . ' approved profile changes; dispute window cleared.');
+
+        $templateMgr = TemplateManager::getManager($request);
+        $templateMgr->assign([
+            'memberName' => $member->getFullName(),
+            'journalName' => $context->getLocalizedName(),
+            'alreadyApproved' => false,
+        ]);
+        $templateMgr->display($this->getPlugin()->getTemplateResource('approveSuccess.tpl'));
+    }
+
+    /**
      * Generate an HMAC signature for a reportFalseClaim URL.
      */
     private function generateReportSig(int $memberId): string

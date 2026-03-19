@@ -724,6 +724,15 @@ msgstr "URL to dispute the change via ORCID authentication"
 msgid "plugins.generic.orcidEditorialBoard.disputePending"
 msgstr "⏳ Pending confirmation"
 
+msgid "plugins.generic.orcidEditorialBoard.approveEdit.success"
+msgstr "You have approved the changes to your editorial board profile. Your verified badge has been restored."
+
+msgid "plugins.generic.orcidEditorialBoard.approveEdit.alreadyApproved"
+msgstr "These changes have already been approved or the confirmation period has ended. No further action is needed."
+
+msgid "plugins.generic.orcidEditorialBoard.emailVar.approveUrl"
+msgstr "URL for the member to approve profile changes and restore the verified badge"
+
 msgid "plugins.generic.orcidEditorialBoard.memberStatus"
 msgstr "Member Status"
 

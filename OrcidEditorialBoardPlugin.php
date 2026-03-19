@@ -82,7 +82,7 @@ class OrcidEditorialBoardPlugin extends GenericPlugin
             $allowedOps = [
                 'index', 'consent', 'callback',
                 'coiDeclare', 'verify',
-                'reportFalseClaim',
+                'reportFalseClaim', 'approveEdit',
                 'action', 'denyInvitationConfirm',
             ];
             if ($op && !in_array($op, $allowedOps, true)) {

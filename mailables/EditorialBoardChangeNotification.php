@@ -22,6 +22,7 @@ class EditorialBoardChangeNotification extends Mailable
      * @param string|null $consentUrl  If identity fields changed, the re-verification consent URL
      * @param string|null $disputeUrl  URL the member can use to dispute the change
      * @param string|null $coiUrl      If identity fields changed, the COI re-declaration URL
+     * @param string|null $approveUrl  URL for the member to approve changes and restore verified badge
      */
     public function __construct(
         Journal $context,
@@ -29,7 +30,8 @@ class EditorialBoardChangeNotification extends Mailable
         array $changedFields,
         ?string $consentUrl = null,
         ?string $disputeUrl = null,
-        ?string $coiUrl = null
+        ?string $coiUrl = null,
+        ?string $approveUrl = null
     ) {
         parent::__construct([$context]);
 
@@ -60,6 +62,13 @@ class EditorialBoardChangeNotification extends Mailable
             $actionsHtml .= '<a href="' . htmlspecialchars($consentUrl) . '" style="display:inline-block;padding:12px 24px;background:#16a34a;color:#ffffff;text-decoration:none;border-radius:8px;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Arial,sans-serif;font-weight:700;font-size:14px;">Review &amp; Re-Verify via ORCID</a>';
             $actionsHtml .= '</div>';
         }
+        if ($approveUrl) {
+            $actionsHtml .= '<div style="margin:16px 0;padding:14px 18px;background:#f0fdf4;border:1px solid #86efac;border-radius:8px;">';
+            $actionsHtml .= '<div style="font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Arial,sans-serif;color:#166534;font-weight:700;font-size:14px;margin-bottom:8px;">✅ Review the changes above</div>';
+            $actionsHtml .= '<div style="font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Arial,sans-serif;color:#15803d;font-size:13px;margin-bottom:14px;">If the changes are correct, click below to approve them and restore your verified badge:</div>';
+            $actionsHtml .= '<a href="' . htmlspecialchars($approveUrl) . '" style="display:inline-block;padding:12px 24px;background:#16a34a;color:#ffffff;text-decoration:none;border-radius:8px;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Arial,sans-serif;font-weight:700;font-size:14px;">Approve &amp; Confirm Changes</a>';
+            $actionsHtml .= '</div>';
+        }
         if ($disputeUrl) {
             $actionsHtml .= '<div style="margin:16px 0;padding:14px 18px;background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;">';
             $actionsHtml .= '<div style="font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Arial,sans-serif;font-size:13px;margin-bottom:10px;">If you believe these changes are incorrect, you have <strong>7 days</strong> to dispute them:</div>';
@@ -85,6 +94,7 @@ class EditorialBoardChangeNotification extends Mailable
             'actionsHtml'    => $actionsHtml,
             'consentUrl'     => $consentUrl ?? '',
             'disputeUrl'     => $disputeUrl ?? '',
+            'approveUrl'     => $approveUrl ?? '',
             'coiUrl'         => $coiUrl ?? '',
             'contactName'    => $contactName,
             'contactEmail'   => $contactEmail,

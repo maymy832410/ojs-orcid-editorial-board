@@ -295,12 +295,26 @@ class EditorialBoardGridHandler extends GridHandler
 
             // ── Set 7-day dispute window when any change is detected ──
             $disputeUrl = null;
+            $approveUrl = null;
             if (!empty($changedFields)) {
                 $updatedMember->setDisputeExpiresAt(Carbon::now()->addDays(7)->toDateTimeString());
 
+                $dispatcher = $dispatcher ?? $request->getDispatcher();
+
+                // Build approve URL (HMAC-signed — lets the member confirm changes and clear the pending badge)
+                $approveSig = hash_hmac('sha256', 'approve:' . $memberId, \APP\plugins\generic\orcidEditorialBoard\OrcidEditorialBoardPlugin::getHmacSecret());
+                $approveUrl = $dispatcher->url(
+                    $request,
+                    Application::ROUTE_PAGE,
+                    $context->getPath(),
+                    'editorialBoard',
+                    'approveEdit',
+                    null,
+                    ['memberId' => $memberId, 'sig' => $approveSig]
+                );
+
                 // Build dispute URL — use current OR previous ORCID so original owner can dispute
                 if ($updatedMember->getOrcidId() || $updatedMember->getPreviousOrcidId()) {
-                    $dispatcher = $dispatcher ?? $request->getDispatcher();
                     $reportSig = hash_hmac('sha256', 'report:' . $memberId, \APP\plugins\generic\orcidEditorialBoard\OrcidEditorialBoardPlugin::getHmacSecret());
                     $disputeUrl = $dispatcher->url(
                         $request,
@@ -331,9 +345,10 @@ class EditorialBoardGridHandler extends GridHandler
                         $context,
                         $updatedMember,
                         $changedFields,
-                        $consentUrl,   // null if no identity change or ORCID not configured
-                        $disputeUrl,   // null if member has no ORCID
-                        $coiUrl ?? null // null if no identity change (COI not reset)
+                        $consentUrl,    // null if no identity change or ORCID not configured
+                        $disputeUrl,    // null if member has no ORCID
+                        $coiUrl ?? null, // null if no identity change (COI not reset)
+                        $approveUrl     // lets the member approve changes and clear the pending badge
                     );
                     $mailable->from($context->getData('contactEmail'), $context->getData('contactName'));
                     $mailable->to($updatedMember->getEmail(), $updatedMember->getFullName());
