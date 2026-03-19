@@ -35,7 +35,7 @@
 		{/fbvFormSection}
 
 		{fbvFormSection title="plugins.generic.orcidEditorialBoard.settings.clientSecret" required=true}
-			{fbvElement type="password" id="orcidClientSecret" value=$orcidClientSecret required=true maxlength="64"}
+			{fbvElement type="text" id="orcidClientSecret" value=$orcidClientSecret required=true maxlength="64"}
 			{if $maskedSecret}
 				<p style="font-size:0.85rem;color:#64748b;margin-top:4px;">{translate key="plugins.generic.orcidEditorialBoard.settings.currentSecret"}: <code>{$maskedSecret|escape}</code></p>
 			{/if}
@@ -50,7 +50,7 @@
 
 		{fbvFormSection title="plugins.generic.orcidEditorialBoard.settings.editorialBoardUrl"}
 			<div style="background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:10px 14px;font-family:monospace;font-size:0.88rem;word-break:break-all;">
-				{$editorialBoardUrl|escape}
+				<a href="{$editorialBoardUrl|escape}" target="_blank" style="color:#1e40af;text-decoration:underline;">{$editorialBoardUrl|escape}</a>
 			</div>
 			<p style="font-size:0.82rem;color:#64748b;margin-top:4px;">{translate key="plugins.generic.orcidEditorialBoard.settings.editorialBoardUrlHelp"}</p>
 		{/fbvFormSection}

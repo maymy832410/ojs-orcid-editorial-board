@@ -2,6 +2,12 @@
 
 All notable changes to this plugin are documented in this file.
 
+## [1.6.6.1] - 2026-03-19
+
+### Fixed
+- Client secret field now renders as a visible text input instead of a hidden password field.
+- Editorial board page URL is now a clickable hyperlink that opens in a new tab.
+
 ## [1.6.6.0] - 2026-03-19
 
 ### Added
