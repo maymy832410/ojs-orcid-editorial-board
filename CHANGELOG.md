@@ -2,6 +2,11 @@
 
 All notable changes to this plugin are documented in this file.
 
+## [1.6.7.4] - 2026-03-19
+
+### Fixed
+- Added missing locale key `tenure.nearExpiry` — the near-expiry tenure badge now displays "Near Expiry" instead of the raw translation key.
+
 ## [1.6.7.3] - 2026-03-19
 
 ### Fixed

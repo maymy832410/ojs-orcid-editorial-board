@@ -481,6 +481,9 @@ msgstr "Active"
 msgid "plugins.generic.orcidEditorialBoard.tenure.expired"
 msgstr "Expired"
 
+msgid "plugins.generic.orcidEditorialBoard.tenure.nearExpiry"
+msgstr "Near Expiry"
+
 msgid "plugins.generic.orcidEditorialBoard.tenure.until"
 msgstr "until"
 
