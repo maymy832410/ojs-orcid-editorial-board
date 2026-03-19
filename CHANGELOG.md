@@ -2,6 +2,11 @@
 
 All notable changes to this plugin are documented in this file.
 
+## [1.6.7.1] - 2026-03-19
+
+### Improved
+- Redesigned ORCID consent success page with premium card layout (gradient header, checkmark icon, ORCID authenticated badge, info box, secured footer).
+
 ## [1.6.7.0] - 2026-03-19
 
 ### Added
