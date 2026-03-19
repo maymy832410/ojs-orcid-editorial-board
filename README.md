@@ -49,7 +49,7 @@ This is required so invitation and consent emails can be delivered correctly.
 
 ### B) Install from Plugin Gallery upload
 
-1. Download the release archive ([orcidEditorialBoard-v1.6.6.0.tar.gz](https://github.com/maymy832410/ojs-orcid-editorial-board/releases/download/v1.6.6.0/orcidEditorialBoard-v1.6.6.0.tar.gz)).
+1. Download the latest release archive (right side menu).
 2. In OJS go to: **Dashboard → Settings → Website → Plugins**.
 3. Click **Upload A New Plugin**.
 4. Upload the `.tar.gz` file.
