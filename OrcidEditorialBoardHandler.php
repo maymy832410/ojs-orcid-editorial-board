@@ -348,6 +348,8 @@ class OrcidEditorialBoardHandler extends Handler
         $member->setOrcidVerifiedCachedAt(Carbon::now()->toDateTimeString());
         $member->setConsentToken(null);
         $member->setConsentTokenExpires(null);
+        // Clear the dispute window so the verified badge takes priority on the public page
+        $member->setDisputeExpiresAt(null);
         $dao->updateObject($member);
 
         OrcidEditorialBoardPlugin::log('ORCID verification SUCCESS for ORCID ' . $orcidFromApi . ' member ' . $member->getId());

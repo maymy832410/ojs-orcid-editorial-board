@@ -2,6 +2,11 @@
 
 All notable changes to this plugin are documented in this file.
 
+## [1.6.7.3] - 2026-03-19
+
+### Fixed
+- ORCID re-verification now clears the dispute window (`disputeExpiresAt`), so the verified badge is immediately restored on the editorial board page after successful re-verification.
+
 ## [1.6.7.2] - 2026-03-19
 
 ### Fixed
